@@ -20,6 +20,11 @@ RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+namespace :dummy do
+  require_relative "spec/dummy/application"
+  Dummy::Application.load_tasks
+end
+
 Bundler::GemHelper.install_tasks
 
 require 'rake/testtask'
