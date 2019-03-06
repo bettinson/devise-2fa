@@ -1,5 +1,19 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe User do
-  it { is_expected.to be_a_kind_of User }
+  context 'attributes' do
+    user = User.new(email: 'matt@geemail.com', password: 'hi')
+
+    describe '#email' do
+      it 'can store and retrieve email' do
+        expect(user.email).to eq 'matt@geemail.com'
+      end
+    end
+
+    describe '#password' do
+      it 'can store and retrieve password' do
+        expect(user.password).to eq 'hi'
+      end
+    end
+  end
 end

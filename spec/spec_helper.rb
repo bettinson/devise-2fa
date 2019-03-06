@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'rotp'
 require "dummy/application"
 Bundler.setup
 
